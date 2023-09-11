@@ -4,7 +4,7 @@ services:
   web:
     build: .
     # python manage.py makemigrations && python manage.py migrate && echo \"from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser('admin', 'admin@example.com', 'adm1n@123')\" | python manage.py shell && 
-    command: bash -c "python manage.py runserver 0.0.0.0:9000"
+    command: bash -c "python manage.py makemigrations && python manage.py migrate &&  python manage.py runserver 0.0.0.0:9000"
     ports:
       - "9000:9000"
     volumes:
