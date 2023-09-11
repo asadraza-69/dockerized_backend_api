@@ -54,8 +54,7 @@ Before you begin, ensure you have met the following requirements:
 
 6. Start the development server:
     ```shell
-    python manage.py runserver
-
+    python manage.py runserver --settings  backend_api.local_settings
 
 ### dockerenviroment
 1. First run this command for update your os dependencies:
