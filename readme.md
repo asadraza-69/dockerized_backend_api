@@ -58,6 +58,57 @@ Before you begin, ensure you have met the following requirements:
 
 
 ### dockerenviroment
+1. First run this command for update your os dependencies:
+    ```shell
+    sudo apt-get update
+
+2. Fetches the Docker package from the repositories and installs it on your system:
+    ```shell
+    sudo apt install docker.io
+
+3. Download and install the Docker package from the Snap Store, which is a central repository for snap packages:
+    ```shell
+    sudo snap install docker
+
+4. Docker version:
+    ```shell
+    docker --version
+
+5. Download any docker image/container:
+    ```shell
+    sudo docker run (image name)
+
+6. Available docker image/container in your system:
+    ```shell
+    sudo docker ps -a
+
+7. Install all dependencies in your Docker that your project need:
+    ```shell
+    sudo docker build -t myapp 
+
+8. Command to build docker-compose file:
+    ```shell
+    sudo docker-compose up --build
+
+9. you check all images in your system:
+    ```shell
+    sudo docker ps -a
+
+    output:
+    CONTAINER ID           IMAGE                       COMMAND                  CREATED          STATUS                      PORTS     NAMES
+    9ff0241e7711     django_project_lambda-web   "bash -c 'python man…"   19 seconds ago   Exited (1) 16 seconds ago                myapp
+
+10. For restart the docker container run this command:
+    ```shell    
+    sudo docker-compose restart
+
+11. If you want to stop the running docker container run this command:
+    ```shell
+    sudo docker-compose down
+
+12. If you want to start docker container run this command:
+    ```shell    
+    sudo docker-compose up
 
 
 ### Usage
