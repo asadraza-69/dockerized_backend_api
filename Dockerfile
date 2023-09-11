@@ -10,6 +10,6 @@ COPY . .
 
 EXPOSE 9000
 
-RUN apt-get update && pip install --upgrade pip
+RUN pip install --upgrade pip
 
 CMD python manage.py runserver 0.0.0.0:9000

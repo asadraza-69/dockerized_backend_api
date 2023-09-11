@@ -24,4 +24,4 @@ syntax: glob
 media/*
 .idea/*
 typescript
-**/local_settings.py
+# **/local_settings.py
