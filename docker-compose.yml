@@ -9,6 +9,7 @@ services:
     ports:
       - "9000:9000"
     volumes:
+    #  - ./your_project_directory:/app  # This maps your project directory to /app in the container
       - .:/app  # This maps your project directory to /app in the container
     depends_on:
       - db
