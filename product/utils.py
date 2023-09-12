@@ -19,7 +19,7 @@ def global_search_utils(request):
             'description' : product.description,
             'stock' : product.stock,
             'price' : product.price,
-            'url' : reverse('product:cart_item',args=[product.pk]),
+            'url' : reverse('product:cart_item',args=[product.pk])  if not request.user.is_anonymous else None,
             }, product_qs))
     
     if not product_list:

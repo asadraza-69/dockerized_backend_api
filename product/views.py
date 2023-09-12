@@ -10,6 +10,7 @@ from django.db import transaction
 # Create your views here.
 
 class ProductSearch(APIView):
+    permission_classes = [permissions.AllowAny]
     def get(self, request):
         resp = global_search_utils(request)
         return Response(resp, status = resp['status_code'])
