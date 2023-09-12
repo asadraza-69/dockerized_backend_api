@@ -103,9 +103,10 @@ class MainRegisterSerializer(serializers.Serializer):
                 self.resp['status'] = True 
                 self.resp['status_code'] = status.HTTP_201_CREATED
                 self.resp['message'] = 'User created successfully'
-                self.resp["data"] = model_to_dict(user_obj)
-                refresh = self.get_token(user_obj)
-                self.resp['data'].update({"access" : str(refresh.access_token),"refresh" : str(refresh),})
+                self.resp["data"] = {'email' : user_obj.email}
+                if settings.LOGIN_ON_REGISTRATION == True:
+                    refresh = self.get_token(user_obj)
+                    self.resp['data'].update({"access" : str(refresh.access_token),"refresh" : str(refresh),})
         else:
             self.resp['message'] = validated_data.get('error')
         return self.resp

@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dotenv
+dotenv.load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,13 +83,15 @@ WSGI_APPLICATION = 'backend_api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASE_HOST = os.getenv('DB_LOCALHOST')
+DATABASE_HOST = os.getenv('DB_DOCKERHOST')
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'backend_api_db',
         'USER': 'postgres',
         'PASSWORD': 'roOt@5',
-        'HOST': 'db',
+        'HOST': DATABASE_HOST,
         'PORT': '5432',
     }
 }
@@ -144,3 +149,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 USER_DEFINED_USERNAME = False
 EMAIL_AS_USERNAME = True
 ENABLE_CONFIRM_PASSWORD = False
+LOGIN_ON_REGISTRATION =  False

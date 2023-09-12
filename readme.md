@@ -43,8 +43,8 @@ Before you begin, ensure you have met the following requirements:
 3. Install the project dependencies:
     ```shell
     pip install -r requirements.txt
-
 4. Apply migrations:
+    uncomment DB_LOCALHOST from settings
     ```shell
     python manage.py migrate
 
