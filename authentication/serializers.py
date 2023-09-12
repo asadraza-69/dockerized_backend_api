@@ -143,8 +143,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
                 return {'message': 'Invalid password'}
             else:
                 data = {
-                    'full_name' :self.user.profile.get_full_name(),
-                    'user_profile' :self.user.profile.get_main_image(),
+                    'name' :self.user.first_name,
                     'email' : self.user.email
                 }
                 return data 
