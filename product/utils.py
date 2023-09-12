@@ -19,7 +19,7 @@ def global_search_utils(request):
             'description' : product.description,
             'stock' : product.stock,
             'price' : product.price,
-            # 'url' : reverse('user_management:get_profile_id',args=[user.profile.pk]),
+            'url' : reverse('product:cart_item',args=[product.pk]),
             }, product_qs))
     
     if not product_list:

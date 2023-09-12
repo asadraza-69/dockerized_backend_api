@@ -73,8 +73,9 @@ Before you begin, ensure you have met the following requirements:
     ```shell
     docker --version
 
-5. Download any docker image/container:
+5. Download and run any docker image/container:
     ```shell
+    docker pull postgres
     sudo docker run (image name)
 
 6. Available docker image/container in your system:
