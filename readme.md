@@ -1,4 +1,4 @@
-# Blog Website with Django
+# Authentication Website with Django
 
 This is a Authentication project built using the Django web framework and restapi. The project allows users to signin, signup signout, add to cart and product search. It also includes user authentication for creating and managing accounts.
 
@@ -83,7 +83,7 @@ Before you begin, ensure you have met the following requirements:
 
 7. Install all dependencies in your Docker that your project need:
     ```shell
-    sudo docker build -t myapp 
+    sudo docker build -t myapp .
 
 8. Command to build docker-compose file:
     ```shell

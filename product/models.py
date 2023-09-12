@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 from datetime import datetime
+from authentication.utils import User
 import os
 
 # Create your models here.
@@ -37,3 +38,21 @@ class ProductImages(models.Model):
     
     def __str__(self):
         return "%s" %(self.image_path.url)
+    
+class Cart(models.Model):
+    i_user = models.OneToOneField(User, on_delete= models.CASCADE, related_name='cart')
+    
+    class Meta:
+        db_table = 'cart'
+
+    def __str__(self):
+        return str(self.i_user.email)
+    
+class CartItem(models.Model):
+    i_cart = models.ForeignKey(Cart, on_delete= models.CASCADE , related_name= 'cart_items')
+    i_product = models.ForeignKey(Product, on_delete= models.CASCADE)
+    class Meta:
+        db_table = 'cart_item'
+
+    def __str__(self):
+        return str(self.i_cart)
